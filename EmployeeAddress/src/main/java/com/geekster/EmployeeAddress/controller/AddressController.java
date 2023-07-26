@@ -13,31 +13,31 @@ public class AddressController {
     AddressService addressService;
 
     //add new address
-    @PostMapping("address")
+    @PostMapping("/address")
     public String addAddress(@RequestBody Address address){
         return addressService.addAddress(address);
     }
 
     //get all addresses
-    @GetMapping("address")
+    @GetMapping("/address")
     public List<Address> getAllAddresses(){
         return addressService.getAllAddresses();
     }
 
     //get address by id
-    @GetMapping("address/{id}")
+    @GetMapping("/address/{id}")
     public Address getAddressById(@PathVariable Long id){
         return addressService.getAddressById(id);
     }
 
     //update address by Id
-    @PutMapping("address/{id}")
+    @PutMapping("/address/{id}")
     public String updateAddress(@RequestBody Address address,@PathVariable Long id ){
         return addressService.updateAddress(address,id);
     }
 
     //delete address by id from list
-    @DeleteMapping("address/{id}")
+    @DeleteMapping("/address/{id}")
     public String deleteAddress(@RequestBody Address address,@PathVariable Long id){
         return addressService.deleteAddress(address,id);
     }

@@ -17,6 +17,7 @@ public class Employee {
     private String lastName;
 
     @OneToOne
+    @JoinColumn(name = "fk_address_id")
     Address address;
 
 }
